@@ -1,7 +1,7 @@
 {
-  "versionCode": 5,
-  "versionName": "1.3.1",
-  "url": "https://github.com/Mosca0808/nextplay-updates/releases/download/v1.3.1/nextplay-5.apk",
-  "notes": "Nuova icona e nuovo logo! Amici: ora vedi subito l'elenco delle persone, con la barra di ricerca. Guarda insieme: le foto profilo di tutti nella stanza e un pannello a destra con partecipanti, voce e chat. Più altre correzioni.",
+  "versionCode": 6,
+  "versionName": "1.3.2",
+  "url": "https://github.com/Mosca0808/nextplay-updates/releases/download/v1.3.2/nextplay-6.apk",
+  "notes": "Guarda insieme: gli inviti arrivano subito, senza ricaricare. Se un blocco pubblicità ferma la connessione, ora c'è una strada di riserva e un pulsante \"Controlla connessione\". Chat sistemata e altre correzioni.",
   "mandatory": false
 }
