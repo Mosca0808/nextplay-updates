@@ -1,7 +1,7 @@
 {
-  "versionCode": 3,
-  "versionName": "1.2",
-  "url": "https://github.com/Mosca0808/nextplay-updates/releases/download/v1.2/nextplay-3.apk",
-  "notes": "Il tasto Indietro ora esce davvero dal player: non resta più la pagina zoomata con la freccia e il bottone Scarica sovrapposti. Il download chiede conferma prima di partire, mostrando cosa stai per scaricare, e si può interrompere dal pulsante nella notifica. Le X e i tasti Indietro riportano alla pagina da cui sei arrivato.",
+  "versionCode": 4,
+  "versionName": "1.3",
+  "url": "https://github.com/Mosca0808/nextplay-updates/releases/download/v1.3/nextplay-4.apk",
+  "notes": "Novità: Amici e Guarda insieme! Aggiungi i tuoi amici e guardate film e serie insieme, sincronizzati: se uno mette in pausa o va avanti, succede anche all'altro. C'è anche la chat vocale e scritta nella stanza, e funziona anche con chi usa il sito NextPlay.",
   "mandatory": false
 }
