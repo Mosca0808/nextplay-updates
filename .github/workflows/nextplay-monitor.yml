@@ -1,0 +1,19 @@
+# Monitor sempre acceso di NextPlay: ogni 10 minuti chiede al sito di controllare tutte le sorgenti
+# (VixSrc, AnimeUnity, AnimeSaturn, embed, metadati) e registra lo storico per l'area admin.
+# Se qualcosa non funziona la richiesta risponde 503: l'esecuzione fallisce e GitHub scrive una mail
+# al proprietario del repository. Copiare in .github/workflows/ del repository Mosca0808/nextplay-updates.
+name: NextPlay monitor
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Controlla i server
+        run: |
+          out=$(curl -sS -m 90 "https://lifesync.altervista.org/nextplay/api/cron.php?alert=1" -w "\n%{http_code}")
+          echo "$out"
+          [ "$(echo "$out" | tail -n1)" = "200" ]
