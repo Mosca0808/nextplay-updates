@@ -1,7 +1,7 @@
 {
-  "versionCode": 7,
-  "versionName": "1.3.3",
-  "url": "https://github.com/Mosca0808/nextplay-updates/releases/download/v1.3.3/nextplay-7.apk",
-  "notes": "Film, serie e anime più stabili, avvisi di connessione meno invadenti nella sezione amici e statistiche d'uso anonime per migliorare i contenuti.",
+  "versionCode": 8,
+  "versionName": "1.3.4",
+  "url": "https://github.com/Mosca0808/nextplay-updates/releases/download/v1.3.4/nextplay-8.apk",
+  "notes": "Anime di nuovo visibili: l'app trova da sola il dominio aggiornato di AnimeUnity e VixCloud, anche quando cambiano.",
   "mandatory": false
 }
