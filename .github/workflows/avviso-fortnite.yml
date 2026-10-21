@@ -1,0 +1,27 @@
+# Avviso: fortniteog.lol non mostra più il messaggio di chiusura «Thank you for all support».
+# Ogni 30 minuti controlla la pagina. Se risponde 200 e la scritta non c'è più, il giro FALLISCE (GitHub manda una mail
+# al proprietario del repository) e il controllo si disattiva da solo, così l'avviso arriva una volta sola.
+name: Avviso fortniteog.lol
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  actions: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Controlla la pagina
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          code=$(curl -sS -m 30 -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124 Safari/537.36" -o page.html -w "%{http_code}" https://fortniteog.lol/ || echo 000)
+          echo "HTTP $code"
+          if [ "$code" != "200" ]; then echo "Sito non raggiungibile adesso: riprovo al prossimo giro."; exit 0; fi
+          if grep -qi "thank you for all support" page.html; then echo "Ancora 'Thank you for all support'."; exit 0; fi
+          echo "::error title=fortniteog.lol è cambiato::La pagina non mostra più 'Thank you for all support'. Controllala: https://fortniteog.lol/"
+          head -c 800 page.html
+          gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/avviso-fortnite.yml/disable" || true
+          exit 1
